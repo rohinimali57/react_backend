@@ -19,10 +19,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    # - name: Build with Maven
+    #   run: mvn --batch-mode --update-snapshots verify
+    #   working-directory: ${{github.workspace}}
     - name: Build with Maven
-      run: mvn --batch-mode --update-snapshots verify
-      working-directory: ${{github.workspace}}
-
+      run: mvnw.cmd clean install
     # Optional: If you need to run a JAR file after building, replace the placeholder with the actual JAR file name
     # - name: Execute Jar File
     #   run: java -jar path/to/your/artifact.jar
